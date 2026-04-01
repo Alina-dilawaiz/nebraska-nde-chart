@@ -4,7 +4,7 @@ import { NextResponse } from 'next/server'
 export async function GET() {
     try {
         const [grades, districts] = await Promise.all([
-            pool.query(`
+            pool.query(`-
                 SELECT DISTINCT grade
                 FROM math_scores
                 WHERE grade != 'ALL'
